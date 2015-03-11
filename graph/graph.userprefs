@@ -1,0 +1,21 @@
+﻿<UserCombinePreferences version="1.0" filename="/home/trojan/programming/c#/graf/graf.sln">
+  <Files>
+    <File name="graf/MainForm.cs" line="303" column="13" />
+  </Files>
+  <Views>
+    <ViewMemento id="ProjectPad">
+      <Node expanded="True">
+        <Node name="graf" expanded="True">
+          <Node name="MainForm.cs" selected="True" />
+        </Node>
+      </Node>
+    </ViewMemento>
+    <ViewMemento id="ClassPad">
+      <Node expanded="True" />
+    </ViewMemento>
+  </Views>
+  <Properties>
+    <Property key="ActiveWindow" value="/home/trojan/programming/c#/graf/graf/MainForm.cs" />
+    <Property key="ActiveConfiguration" value="Debug" />
+  </Properties>
+</UserCombinePreferences>
