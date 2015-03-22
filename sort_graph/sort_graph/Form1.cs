@@ -132,9 +132,9 @@ namespace sort_graph
             updateDataGrid();
         }
 
-        
 
-        private void button6_Click(object sender, EventArgs e)
+
+        private  void button6_Click(object sender, EventArgs e)
         {
             MyMegaCool = new Convers(Convert.ToInt32(textBox1.Text));
             updateDataGrid();
@@ -147,6 +147,7 @@ namespace sort_graph
             BigInteger mul = BigInteger.Multi(num1, num2);
             label7.Text = mul.ToString();
         }
+
 
     }
 }
