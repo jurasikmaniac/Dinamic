@@ -16,7 +16,7 @@ namespace bag
         List<Product> stuff = new List<Product>();
         List<Product> ansver;
         public Form1()
-        {            
+        {
             InitializeComponent();
             bugWeight = Decimal.ToInt32(numericUpDownBugWeight.Value);
             stuff.Add(new Product(3, 8));
@@ -27,45 +27,8 @@ namespace bag
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ansver=new List<Product>();
-            bugWeight = Decimal.ToInt32(numericUpDownBugWeight.Value);
-            int[] dp = new int[bugWeight + 1];
-            dp[0] = 0;
-            for (int w = 1; w <=bugWeight; w++)
-            {
-                dp[w] = dp[w - 1];
-                for (int i = 0; i < stuff.Count; i++)
-                {
-                    if (stuff[i].weight <= w)
-                    {                        
-                        dp[w] = Math.Max(dp[w], dp[w - stuff[i].weight] + stuff[i].price);
-                    }
-                }
-            }
-            int otvet = dp[bugWeight];
-            int W = bugWeight;
-            while (W > 0)
-            {
-                int indexLastStuff = -1;
-                for (int i = 0; i < stuff.Count; i++)
-                {
-                    if (stuff[i].weight <= W)
-                    {
-                        if (dp[W] == (dp[W - stuff[i].weight] + stuff[i].price))
-                        {
-                            indexLastStuff = i;
-                        }
-                    }
-                }
-                if (indexLastStuff==-1)
-                {                    
-                    break;
-                }
-                ansver.Add(stuff[indexLastStuff]);
-                W = W - stuff[indexLastStuff].weight;
-            }
-            updateDataGrid();
-        }        
+            Calc();
+        }
 
         private void updateDataGrid()
         {
@@ -73,10 +36,10 @@ namespace bag
             dataGridView1.Rows.Clear();
             dataGridView2.Rows.Clear();
             if (stuff != null)
-            {                
+            {
                 foreach (var p in stuff)
                 {
-                    dataGridView1.Rows.Add(new string[] { p.weight.ToString(), p.price.ToString() });                    
+                    dataGridView1.Rows.Add(new string[] { p.weight.ToString(), p.price.ToString() });
                 }
             }
             if (ansver != null)
@@ -105,10 +68,55 @@ namespace bag
 
         private void button3_Click(object sender, EventArgs e)
         {
-            stuff=new List<Product>();
+            stuff = new List<Product>();
             updateDataGrid();
         }
 
-        
+        private void numericUpDownBugWeight_ValueChanged(object sender, EventArgs e)
+        {
+            Calc();
+        }
+        private void Calc()
+        {
+            ansver = new List<Product>();
+            bugWeight = Decimal.ToInt32(numericUpDownBugWeight.Value);
+            int[] dp = new int[bugWeight + 1];
+            dp[0] = 0;
+            for (int w = 1; w <= bugWeight; w++)
+            {
+                dp[w] = dp[w - 1];
+                for (int i = 0; i < stuff.Count; i++)
+                {
+                    if (stuff[i].weight <= w)
+                    {
+                        dp[w] = Math.Max(dp[w], dp[w - stuff[i].weight] + stuff[i].price);
+                    }
+                }
+            }
+            int otvet = dp[bugWeight];
+            int W = bugWeight;
+            while (W > 0)
+            {
+                int indexLastStuff = -1;
+                for (int i = 0; i < stuff.Count; i++)
+                {
+                    if (stuff[i].weight <= W)
+                    {
+                        if (dp[W] == (dp[W - stuff[i].weight] + stuff[i].price))
+                        {
+                            indexLastStuff = i;
+                        }
+                    }
+                }
+                if (indexLastStuff == -1)
+                {
+                    break;
+                }
+                ansver.Add(stuff[indexLastStuff]);
+                W = W - stuff[indexLastStuff].weight;
+            }
+            updateDataGrid();
+        }
+
     }
 }

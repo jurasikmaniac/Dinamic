@@ -201,6 +201,7 @@
             0,
             0,
             0});
+            this.numericUpDownBugWeight.ValueChanged += new System.EventHandler(this.numericUpDownBugWeight_ValueChanged);
             // 
             // button3
             // 
