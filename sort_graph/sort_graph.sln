@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sort_graph", "sort_graph\sort_graph.csproj", "{18F4655B-E5E5-4DE6-BCA7-E222A26DCFD6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bag", "bug\bag.csproj", "{A56F4E21-A9CE-45ED-96DF-2235C8A8A772}"
@@ -10,6 +8,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multistep", "Multistep\Multistep.csproj", "{C944041F-2533-4783-896C-ADB24D45003B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix", "Matrix\Matrix.csproj", "{EF424B85-137A-4460-A23B-A75CE12F8D2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kraskal", "..\..\..\prog\Kraskal\Kraskal\Samples\WindowsFormsApplication422\Kraskal.csproj", "{B4026F7C-BA4D-4C8F-9244-8B6BC48913A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +43,12 @@ Global
 		{EF424B85-137A-4460-A23B-A75CE12F8D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF424B85-137A-4460-A23B-A75CE12F8D2C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EF424B85-137A-4460-A23B-A75CE12F8D2C}.Release|x86.ActiveCfg = Release|Any CPU
+		{B4026F7C-BA4D-4C8F-9244-8B6BC48913A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4026F7C-BA4D-4C8F-9244-8B6BC48913A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4026F7C-BA4D-4C8F-9244-8B6BC48913A1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B4026F7C-BA4D-4C8F-9244-8B6BC48913A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4026F7C-BA4D-4C8F-9244-8B6BC48913A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4026F7C-BA4D-4C8F-9244-8B6BC48913A1}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
