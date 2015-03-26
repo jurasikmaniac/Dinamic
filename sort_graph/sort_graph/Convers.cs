@@ -73,7 +73,7 @@ namespace sort_graph
                 {
                     C[i + j] += A[i] * B[j];
                 }
-                
+
             }
             timeLinear = Environment.TickCount - timeLinear;
         }        

@@ -173,6 +173,7 @@
             this.labelMove.Size = new System.Drawing.Size(13, 13);
             this.labelMove.TabIndex = 4;
             this.labelMove.Text = "0";
+            this.labelMove.Visible = false;
             // 
             // labelComp
             // 
@@ -182,6 +183,7 @@
             this.labelComp.Size = new System.Drawing.Size(13, 13);
             this.labelComp.TabIndex = 5;
             this.labelComp.Text = "0";
+            this.labelComp.Visible = false;
             // 
             // button1
             // 
@@ -207,7 +209,7 @@
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(95, 187);
             this.numericUpDown1.Maximum = new decimal(new int[] {
-            10000,
+            100000,
             0,
             0,
             0});
