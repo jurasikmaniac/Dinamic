@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multistep", "Multistep\Mult
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix", "Matrix\Matrix.csproj", "{EF424B85-137A-4460-A23B-A75CE12F8D2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kraskal", "..\..\..\prog\Kraskal\Kraskal\Samples\WindowsFormsApplication422\Kraskal.csproj", "{B4026F7C-BA4D-4C8F-9244-8B6BC48913A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kraskal", "Kraskal\Kraskal.csproj", "{B4026F7C-BA4D-4C8F-9244-8B6BC48913A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
