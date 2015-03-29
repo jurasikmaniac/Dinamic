@@ -115,8 +115,7 @@ namespace Kraskal
 
         private void button2_Click(object sender, EventArgs e)
         {
-            button5.Enabled = true;
-            button4.Enabled = true;
+            button5.Enabled = true;            
             int t;
             flagpaint = true;
             control();
@@ -145,8 +144,7 @@ namespace Kraskal
         {
            
             button1.Enabled = false;
-            button5.Enabled = false;
-            button4.Enabled = false;
+            button5.Enabled = false;            
             flagbuild = false;
             flagload = true;
             koord.Clear();
@@ -381,8 +379,7 @@ namespace Kraskal
         }
 
         public void pictureBox1_MouseClick(object sender, MouseEventArgs e)
-        {
-            button4.Enabled = true;
+        {            
             button5.Enabled = true;
             if (n != numericUpDown1.Maximum)
             {

@@ -78,5 +78,10 @@ namespace Matrix
             textBox1.Lines = yahu.poryadok;
             updateDataGrid();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
