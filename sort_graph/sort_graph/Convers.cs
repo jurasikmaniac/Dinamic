@@ -38,8 +38,8 @@ namespace sort_graph
             
             for (int i = 0; i < x; i++)
             {
-                A.Add(rnd.Next(1000));
-                B.Add(rnd.Next(1000));            
+                A.Add(rnd.Next(10));
+                B.Add(rnd.Next(10));            
             }
 
             int n = 2 * x - 1;

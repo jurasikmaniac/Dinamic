@@ -291,9 +291,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(439, 61);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 13);
+            this.label9.Size = new System.Drawing.Size(32, 13);
             this.label9.TabIndex = 68;
-            this.label9.Text = "Смежности";
+            this.label9.Text = "result";
             // 
             // textBox2
             // 

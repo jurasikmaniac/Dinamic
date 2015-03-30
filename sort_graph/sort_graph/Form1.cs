@@ -108,8 +108,28 @@ namespace sort_graph
         private void button1_Click(object sender, EventArgs e)
         {
             arrSort = new List<int>(arrUnsort);            
-            arrSort = MyArray.MergeSort(arrSort);
+            arrSort = MyArray.MergeSort(arrSort);            
             updateDataGrid();
+
+            textBoxConsole.Text += Environment.NewLine;
+            textBoxConsole.Text += "Не отсортированный массив:";
+            foreach (var item in arrUnsort)
+            {
+                textBoxConsole.Text += item.ToString() + " ";
+            }
+
+             textBoxConsole.Text += Environment.NewLine;
+            foreach (var item in MyArray.print)
+            {
+                textBoxConsole.Text += item+" ";
+            }
+            textBoxConsole.Text += Environment.NewLine;
+            textBoxConsole.Text += Environment.NewLine;
+            foreach (var item in arrSort)
+            {
+                textBoxConsole.Text += item.ToString() + " ";
+            }
+            MyArray.print=new List<string>();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -123,6 +143,7 @@ namespace sort_graph
             arrSort = new List<int>(arrUnsort);
             MyArray.SelectSort(ref arrSort);
             updateDataGrid();
+            PrintMass();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -130,6 +151,7 @@ namespace sort_graph
             arrSort = new List<int>(arrUnsort);
             MyArray.BubbleSort(ref arrSort);
             updateDataGrid();
+            PrintMass();
         }
 
 
@@ -138,6 +160,63 @@ namespace sort_graph
         {
             MyMegaCool = new Convers(Convert.ToInt32(textBox1.Text));
             updateDataGrid();
+            textBoxConsole.Text = "";
+            textBoxConsole.Text += "Массив А:";
+            int p = 0;
+            foreach (var item in MyMegaCool.A)
+            {
+                if (p < Convert.ToInt32(textBox1.Text))
+                {
+                    textBoxConsole.Text += item.ToString() + " ";
+                    p++;
+                }
+                
+            }
+
+            textBoxConsole.Text += Environment.NewLine;
+            textBoxConsole.Text += "Массив B:";
+            p = 0;
+            foreach (var item in MyMegaCool.B)
+            {
+                if (p < Convert.ToInt32(textBox1.Text))
+                {
+                    textBoxConsole.Text += item.ToString() + " ";
+                    p++;
+                }
+            }
+            textBoxConsole.Text += Environment.NewLine;
+
+            int N = Convert.ToInt32(textBox1.Text) ;
+            string s = "";
+            for (int i = 0; i < N * 2 - 1; i++)
+            {
+                s+="C"+i+"=";
+                for (int j = 0; j < N; j++)
+                {
+                    for (int k = 0; k < N; k++)
+                    {
+                        if (j+k==i)
+                        {
+                            s +="+"+ MyMegaCool.A[j].ToString() + "*" + MyMegaCool.B[k].ToString();
+                        }
+                    }
+                }
+                textBoxConsole.Text += s;
+                s = "";
+                textBoxConsole.Text += Environment.NewLine;
+            }
+
+            p = 0;
+            foreach (var item in MyMegaCool.C)
+            {
+                if (p < Convert.ToInt32(textBox1.Text) * 2 - 1)
+                {
+                    textBoxConsole.Text += item.ToString() + " ";
+                    p++;
+                }
+
+            }
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -148,6 +227,26 @@ namespace sort_graph
             label7.Text = mul.ToString();
         }
 
+        void PrintMass()
+        {
+            textBoxConsole.Text += Environment.NewLine;
+            textBoxConsole.Text += "Не отсортированный массив:";
+            foreach (var item in arrUnsort)
+            {
+                textBoxConsole.Text += item.ToString() + " ";
+            }
+            textBoxConsole.Text += Environment.NewLine;
+            textBoxConsole.Text += "Отсортированный массив:";
+            foreach (var item in arrSort)
+            {
+                textBoxConsole.Text += item.ToString() + " ";
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBoxConsole.Text = "";
+        }
 
     }
 }

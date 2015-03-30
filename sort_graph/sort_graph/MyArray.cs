@@ -9,6 +9,9 @@ namespace sort_graph
     static class MyArray
     {   
         static public int move, comp; // Перестановки, сравнения
+        static public List<string> print=new List<string>();
+
+
         static public void ResetMC()
         {
             move = comp = 0;
@@ -17,12 +20,20 @@ namespace sort_graph
         static public void FillArray(out List<int> arr, int _size){
             arr = new List<int>();
             Random rand = new Random();
-            
+
             for (int i = 0; i < _size; i++)
             {
                 arr.Add(rand.Next(_size));
                 //arr.Add(_size - i);
             }
+            //arr.Add(3);
+            //arr.Add(7);
+            //arr.Add(5);
+            //arr.Add(4);
+            //arr.Add(2);
+            //arr.Add(6);
+            //arr.Add(8);
+            //arr.Add(1);
         }
         #region "Select"
         static public void SelectSort(ref List<int> list)
@@ -73,14 +84,38 @@ namespace sort_graph
                 move++;
             }
 
+            
+                
+            
+
             left = MergeSort(left);
             right = MergeSort(right);
+
+            string str = "";
+            foreach (var item in left)
+            {
+                str += item.ToString();
+            }
+            print.Add(str);
+
+            str = "";
+            foreach (var item in right)
+            {
+                str += item.ToString();
+            }
+            print.Add(str);
+            
 
             comp++;
             if (left[left.Count - 1] <= right[0])
                 return append(left, right);
 
+            
+
+
             result = merge(left, right);
+
+
             return result;
         }
 
@@ -94,6 +129,7 @@ namespace sort_graph
                 move++;
                 result.Add(x);
             }
+            
             return result;
         }
 
@@ -129,6 +165,7 @@ namespace sort_graph
                 s.Add(b[0]);
                 b.RemoveAt(0);
             }
+            
             return s;
         }
 
