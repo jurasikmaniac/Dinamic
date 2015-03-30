@@ -107,15 +107,25 @@ namespace Dijkstra
                         d[v] = d[to] + len;
                         p[v] = to;
                     }
+                    
                 }
                 
             }
+foreach (var item in d)
+                    {
+                        if (item==INF)
+                        {
+                            textBox2.Text +="INF" + " ";
+                        }else
+                        textBox2.Text += item.ToString() + " ";
 
-            foreach (var item in d)
-            {
-                textBox2.Text += item.ToString() + " ";
+                    }
+                    textBox2.Text += Environment.NewLine;
+            //foreach (var item in d)
+            //{
+            //    textBox2.Text += item.ToString() + " ";
 
-            }
+            //}
             textBox2.Text += Environment.NewLine;
             if (t > n - 1)
             {

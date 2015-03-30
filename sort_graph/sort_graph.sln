@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Floyd", "Floyd\Floyd.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plane", "Plane\Plane.csproj", "{9CBABCAE-A1B7-4726-8246-10DD51C6E8F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesenka", "lesenka\lesenka.csproj", "{71ADA3EF-CDF5-4BCE-836A-4D51582BD992}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,12 @@ Global
 		{9CBABCAE-A1B7-4726-8246-10DD51C6E8F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CBABCAE-A1B7-4726-8246-10DD51C6E8F8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9CBABCAE-A1B7-4726-8246-10DD51C6E8F8}.Release|x86.ActiveCfg = Release|Any CPU
+		{71ADA3EF-CDF5-4BCE-836A-4D51582BD992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71ADA3EF-CDF5-4BCE-836A-4D51582BD992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71ADA3EF-CDF5-4BCE-836A-4D51582BD992}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{71ADA3EF-CDF5-4BCE-836A-4D51582BD992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71ADA3EF-CDF5-4BCE-836A-4D51582BD992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71ADA3EF-CDF5-4BCE-836A-4D51582BD992}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

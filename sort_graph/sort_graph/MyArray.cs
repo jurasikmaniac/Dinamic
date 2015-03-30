@@ -9,6 +9,8 @@ namespace sort_graph
     static class MyArray
     {   
         static public int move, comp; // Перестановки, сравнения
+        static public List<string> print=new List<string>();
+
         static public void ResetMC()
         {
             move = comp = 0;
@@ -54,6 +56,12 @@ namespace sort_graph
 
         static public List<int> MergeSort(List<int> m)
         {
+            string s = "";
+            foreach (var item in m)
+            {
+                s += item.ToString();
+            }
+            print.Add(s);
             List<int> result = new List<int>();
             List<int> left = new List<int>();
             List<int> right = new List<int>();
@@ -75,7 +83,7 @@ namespace sort_graph
 
             left = MergeSort(left);
             right = MergeSort(right);
-
+            
             comp++;
             if (left[left.Count - 1] <= right[0])
                 return append(left, right);
@@ -93,7 +101,10 @@ namespace sort_graph
             {
                 move++;
                 result.Add(x);
+                
             }
+            
+            
             return result;
         }
 
@@ -144,9 +155,9 @@ namespace sort_graph
             // Перестановки, сравнения
             move = 0;
             comp = 0;
-
+           
             for (i = 1; i < arr.Count; i++)
-            {
+            { bool pere = false;
                 for (j = arr.Count - 1; j >= i; j--)
                 {
                     comp++; // Сравнения
@@ -156,8 +167,10 @@ namespace sort_graph
                         arr[j] = arr[j - 1];
                         arr[j - 1] = swap;
                         move += 3; // Перестановки
+                        pere = true;
                     }
                 }
+                if (!pere) break;
             }
         }
 

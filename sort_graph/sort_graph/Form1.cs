@@ -107,8 +107,10 @@ namespace sort_graph
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             arrSort = new List<int>(arrUnsort);            
             arrSort = MyArray.MergeSort(arrSort);
+            var str = MyArray.print;
             updateDataGrid();
         }
 
