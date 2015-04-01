@@ -183,6 +183,7 @@ namespace sort_graph
 
             for (i = 1; i < arr.Count; i++)
             {
+                bool asdf = false;
                 for (j = arr.Count - 1; j >= i; j--)
                 {
                     comp++; // Сравнения
@@ -192,8 +193,10 @@ namespace sort_graph
                         arr[j] = arr[j - 1];
                         arr[j - 1] = swap;
                         move += 3; // Перестановки
+                        asdf = true;
                     }
                 }
+                if (!asdf) break;
             }
         }
 

@@ -36,9 +36,7 @@ template<class T> void Merge(T const *const A, int const nA,
 
 
 template<class T> void MergeSortIterative(T *&A, int const n)
-{ //Отсортировать массив A, содержащий n элементов.
-	//  При работе указатель на A, возможно, меняется.
-	//  (Функция получает ссылку на указатель на A)
+{ 
 
 	T *B(new T[n]); //Временный буфер памяти
 
@@ -49,24 +47,30 @@ template<class T> void MergeSortIterative(T *&A, int const n)
 
 		for (; (start + size)<n; start += size * 2)
 		{ //Перебираем все пары кусочков, и выполняем попарное
-			//  слияние. (start+size)<n означает, что начало
-			//  следующего кусочка лежит внутри массива
+			//  слияние. 
 
 			Merge(A + start, size,
 				A + start + size, min(size, n - start - size),
 				B + start);
 			for (size_t i = start; i <start+size*2; i++)
 			{
-				printf_s("%d ", B[i]);				
+				if (i<n)
+				{
+printf_s("%d ", B[i]);
+				}
+								
 			}
 			printf_s("|");
 			
 		}
-printf_s("\n");
+
 		//Если последний кусочек остался без пары, просто копи-
 		//  руем его из A в B:
-		for (; start<n; ++start) B[start] = A[start];
-
+for (; start < n; ++start) { 
+	B[start] = A[start]; 
+	printf_s("%d ", B[start]);
+}
+printf_s("\n");
 		T *temp(B); B = A; A = temp; //Меняем местами указатели
 		
 	}
@@ -74,7 +78,7 @@ printf_s("\n");
 	delete[n] B; //Удаляем временный буфер
 }
 
-#define MAX 16
+#define MAX 8
 int _tmain(int argc, _TCHAR* argv[])
 {
 	srand(time(0));

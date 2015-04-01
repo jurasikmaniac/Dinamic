@@ -95,6 +95,11 @@ namespace bag
             }
             int otvet = dp[bugWeight];
             int W = bugWeight;
+            List<int> count = new List<int>();
+            foreach (var item in stuff)
+            {
+                count.Add(0);
+            }
             while (W > 0)
             {
                 int indexLastStuff = -1;
@@ -113,7 +118,16 @@ namespace bag
                     break;
                 }
                 ansver.Add(stuff[indexLastStuff]);
+                count[indexLastStuff]++;
                 W = W - stuff[indexLastStuff].weight;
+            }
+            textBox1.Text = "";
+            int c=0;
+            foreach (var item in count)
+            {
+                textBox1.Text += "W" + stuff[c].weight + " " + "S" + stuff[c].price + "=" + count[c];
+                    c++;
+                    textBox1.Text += Environment.NewLine;
             }
             updateDataGrid();
         }

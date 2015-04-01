@@ -19,6 +19,8 @@ namespace Plane
         private int labelOffset = 150;
         private int graphWidth = 5;
         private int graphHeight = 3;
+        private List<Point> PATH = new List<Point>();
+
         public Form1()
         {
             InitializeComponent();
@@ -114,10 +116,12 @@ namespace Plane
         }
         private void Form1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
         {
+            Pen p = new Pen(Color.Red, 5);
             foreach (Vertix v in vertixList)
             {
                 v.draw(e.Graphics);
             }
+            e.Graphics.DrawLines(p, PATH.ToArray<Point>());
         }
         private void calcGraphValues()
         {
@@ -127,6 +131,7 @@ namespace Plane
                 v.dv = int.MaxValue;
                 v.setColor(Color.Black);
             }
+            PATH = new List<Point>();
             Vertix start = vertixList[0];
             start.dv = 0;
             Vertix finish = vertixList[vertixList.Count - 1];
@@ -137,7 +142,9 @@ namespace Plane
             foreach (Vertix v in vertixList.FindAll(x => x.getSum() == start.dh))
             {
                 v.setColor(Color.Red);
+                PATH.Add(v.Location);
             }
+
 
         }
         private void recursiveCalcDv(int cur, List<Edge> el)

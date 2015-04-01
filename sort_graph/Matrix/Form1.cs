@@ -58,7 +58,7 @@ namespace Matrix
                     dataGridView1.Rows[i].Cells[j].Value = yahu.matrix[i, j].ToString();
                 }
             }
-
+            dataGridView1.AutoResizeColumns();
         }
 
         private void button1_Click(object sender, EventArgs e)
