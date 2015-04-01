@@ -108,7 +108,10 @@ namespace sort_graph
         private void button1_Click(object sender, EventArgs e)
         {
             arrSort = new List<int>(arrUnsort);            
-            arrSort = MyArray.MergeSort(arrSort);            
+            arrSort = MyArray.MergeSort(arrSort);
+            
+
+
             updateDataGrid();
 
             textBoxConsole.Text += Environment.NewLine;
@@ -118,10 +121,10 @@ namespace sort_graph
                 textBoxConsole.Text += item.ToString() + " ";
             }
 
-             textBoxConsole.Text += Environment.NewLine;
+            textBoxConsole.Text += Environment.NewLine;
             foreach (var item in MyArray.print)
             {
-                textBoxConsole.Text += item+" ";
+                textBoxConsole.Text += item + " ";
             }
             textBoxConsole.Text += Environment.NewLine;
             textBoxConsole.Text += Environment.NewLine;
@@ -129,8 +132,13 @@ namespace sort_graph
             {
                 textBoxConsole.Text += item.ToString() + " ";
             }
-            MyArray.print=new List<string>();
+            MyArray.print = new List<string>();
         }
+
+        
+
+
+
 
         private void button2_Click(object sender, EventArgs e)
         {

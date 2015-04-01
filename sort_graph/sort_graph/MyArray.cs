@@ -82,35 +82,34 @@ namespace sort_graph
             {
                 right.Add(m[i]);
                 move++;
-            }
-
-            
+            }           
                 
             
 
             left = MergeSort(left);
             right = MergeSort(right);
-
-            string str = "";
-            foreach (var item in left)
+            if (left.Count > 1 && right.Count > 1)
             {
-                str += item.ToString();
-            }
-            print.Add(str);
+                string str = "";
+                foreach (var item in left)
+                {
+                    str += item.ToString();
+                }
+                print.Add(str);
 
-            str = "";
-            foreach (var item in right)
-            {
-                str += item.ToString();
+                str = "";
+                foreach (var item in right)
+                {
+                    str += item.ToString();
+                }
+                print.Add(str);
             }
-            print.Add(str);
-            
 
             comp++;
             if (left[left.Count - 1] <= right[0])
                 return append(left, right);
 
-            
+            //print.Add(Environment.NewLine);
 
 
             result = merge(left, right);
