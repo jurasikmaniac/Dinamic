@@ -80,6 +80,7 @@ namespace Dijkstra
             foreach (var item in edges)
             {
                 g[item.a].Add(new Pair(item.b, item.cost));
+                g[item.b].Add(new Pair(item.a, item.cost));
             }
            
             for (int i = 0; i < n; ++i)
@@ -89,34 +90,64 @@ namespace Dijkstra
                     if (!u[j] && (v == -1 || d[j] < d[v]))
                         v = j;
                 if (d[v] == INF)
+                {                    
                     break;
-                u[v] = true;
+                }                
 
+                u[v] = true;
+                //печатаем уже взятых вершин
+                textBox3.Text+="(";
+                for (int k = 0; k < u.Count; k++)
+                {
+                    if (u[k])
+                    {
+                        textBox3.Text+=k+" ";
+                    }
+                }
+                textBox3.Text += ")";
+                textBox3.Text += Environment.NewLine;
+                //печатаем текущую вершину
+                textBox4.Text += "w=" + v;
+                
                 for (int j = 0; j < g[v].Count; ++j)
                 {
-                    int to = g[v][j].to,
-                        len = g[v][j].cost;
+                    int to = g[v][j].to;
+                    int len = g[v][j].cost;                    
                     if (d[v] + len < d[to])
                     {
-                        d[to] = d[v] + len;
+                        d[to] = d[v] + len;                        
                         p[to] = v;
                     }
                     //для неориентированного графа
-                    if (d[to] + len < d[v])
+                    //if (d[to] + len < d[v])
+                    //{
+                    //    d[v] = d[to] + len;                        
+                    //    p[v] = to;                       
+                    //}
+                }
+                
+                textBox4.Text += " D(w)=" + d[v];
+                textBox4.Text += Environment.NewLine;
+                for (int k = 1; k < u.Count; k++)
+                {
+                    if (!u[k])
                     {
-                        d[v] = d[to] + len;
-                        p[v] = to;
+                        textBox5.Text += "D(" + k + ")=" + d[k] + " ";
                     }
                 }
                 
+                textBox5.Text += Environment.NewLine;
+
             }
 
+            //Вывод конечного массива с короткими путями
             foreach (var item in d)
             {
                 textBox2.Text += item.ToString() + " ";
 
             }
             textBox2.Text += Environment.NewLine;
+            //Вывод пути от t вершины s
             if (t > n - 1)
             {
                 textBox2.Text += "No path from " + s + " to " + t + "."; ;

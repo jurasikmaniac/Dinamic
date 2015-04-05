@@ -10,10 +10,10 @@ namespace Dijkstra
     {
         public int to;
         public int cost;
-        public Pair(int To, int Cost)
+        public Pair(int to, int cost)
         {
-            this.to = To;
-            this.cost = Cost;
+            this.to = to;
+            this.cost = cost;
         }
     }
 }
