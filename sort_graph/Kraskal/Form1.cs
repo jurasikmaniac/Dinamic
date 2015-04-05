@@ -148,9 +148,22 @@ namespace Kraskal
             flagbuild = false;
             flagload = true;
             koord.Clear();
-            n = 1;
+            n = 7;
             numericUpDown1.Value = n;
             a = new float[n, n];
+            a[0, 1] = 20;
+            a[1, 2] = 5;
+            a[2, 3] = 3;
+            a[3, 4] = 17;
+            a[4, 5] = 20;
+            a[5, 0] = 23;
+            a[6, 0] = 1;
+            a[6, 1] = 4;
+            a[6, 2] = 9;
+            a[6, 3] = 15;
+            a[6, 4] = 25;
+            a[6, 5] = 36;
+
             a1 = new float[n, n];
             v = new bool[n, n];
             pictureBox1.Invalidate();
@@ -298,7 +311,7 @@ namespace Kraskal
                             {	//Добавление ребра в остовый лес
                                 a1[i, j] = c[k];
                                 a1[j, i] = c[k];
-                                textBox1.Text += "(" + i + "," + j + ")";
+                                
                                 flagend = true;
                                 //Обьединение двух соединенных компонент в одну
                                 n3 = 0;
