@@ -12,7 +12,7 @@ namespace Kruskal
 {
     public partial class Form1 : Form
     {
-        Solver s;
+        Solver s;        
         public Form1()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace Kruskal
             s.addEdge(new Edge(4, 7, 16));
             s.addEdge(new Edge(5, 6, 20));
             s.addEdge(new Edge(5, 7, 25));
-            s.addEdge(new Edge(6, 7, 36));
+            s.addEdge(new Edge(6, 7, 36));            
             updateDataGrid();
         }
         private DataTable ConvertListToDataTable(List<string[]> list)
